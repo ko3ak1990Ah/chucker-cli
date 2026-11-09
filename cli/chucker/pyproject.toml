@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chucker-cli"
+dynamic = ["version"]
+description = "Read-only, secret-redacting, agent-first CLI over Chucker's captured Android HTTP traffic."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+license = "MIT"
+classifiers = ["Environment :: Console", "Topic :: Software Development :: Debuggers"]
+
+[project.urls]
+Homepage = "https://github.com/ko3ak1990Ah/chucker-cli"
+
+[project.scripts]
+chucker = "chucker_cli.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "chucker_cli.cli.VERSION" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

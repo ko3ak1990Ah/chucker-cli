@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(*run-as*)",
+      "Bash(*sqlite3*)",
+      "Bash(*chucker.db*)",
+      "Bash(*adb* backup*)",
+      "Read(**/chucker.db*)",
+      "Edit(~/.local/share/uv/tools/chucker-cli/**)",
+      "Edit(~/.local/pipx/venvs/chucker-cli/**)"
+    ]
+  }
+}

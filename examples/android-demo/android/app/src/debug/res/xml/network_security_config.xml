@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+    <!-- The demo talks plain HTTP to a local mock server (10.0.2.2:8080). -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">api.example.com</domain>
+        <domain includeSubdomains="false">api-tst.example.com</domain>
+    </domain-config>
+</network-security-config>
