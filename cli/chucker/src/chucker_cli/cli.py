@@ -1809,7 +1809,7 @@ def validate(args: argparse.Namespace) -> None:
         if not raw.isdigit():
             usage_error(f"Invalid CHUCKER_CACHE_TTL {raw!r}; use whole seconds.")
         args.cache_ttl = int(raw)
-    if args.package is None:
+    if not args.package:
         if not args.snapshot and args.command != "schema":
             usage_error("Missing --package.", hint="Pass the debuggable app id with --package or set $CHUCKER_PACKAGE; "
                                                    "it is the applicationId of your debug build.")

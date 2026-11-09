@@ -430,7 +430,7 @@ class ChuckerCliTest(unittest.TestCase):
 
     def test_device_commands_require_a_package(self):
         with mock.patch.dict(os.environ, clear=False) as env:
-            env.pop("CHUCKER_PACKAGE", None)
+            env["CHUCKER_PACKAGE"] = ""
             envelope = self.run_json("ls", expected_exit=chucker.Exit.USAGE, snapshot=False)
         self.assertEqual(envelope["error"]["message"], "Missing --package.")
         self.assertIn("applicationId", envelope["error"]["hint"])
